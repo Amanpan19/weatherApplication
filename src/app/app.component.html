@@ -1,0 +1,70 @@
+<div class="search-comp">
+  <input type="text"[(ngModel)]="cityName" class="city_input" placeholder="Enter City Name">
+  <button (click)="getWeatherData()">Search</button>
+</div>
+<div class="container">
+  
+  <div class="upper-data">
+    
+
+     <img src="../assets/day.PNG" alt=""  *ngIf="weatherData.isDay">
+     <img src="../assets/main.PNG" alt="">
+     <img src="../assets/night.PNG" alt="" *ngIf="!weatherData.isDay">
+
+     <div class="weather-data">
+      <div class="location">
+     {{cityName}}
+      </div>
+      <div class="temprature">{{weatherData.temp | number: '1.0-0'}}°C</div>
+     </div>
+  </div>
+  <div class="lower-data">
+    <div class="more-info-label">
+      More Information
+    </div>
+    <div class="more-info-container">
+      <div class="info-block">
+        <div class="info-block-label">
+         <img src="../assets/thermometer.png" alt="">
+         <span>min</span>
+        </div>
+        <div class="info-block-value">
+          {{weatherData.temp_min}}°C
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+         <img src="../assets/max-thermo.png" alt="">
+         <span>max</span>
+        </div>
+        <div class="info-block-value">
+          {{weatherData.temp_max}}°C
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+         <img src="../assets/humidity.png" alt="">
+         <span>humidity</span>
+        </div>
+        <div class="info-block-value">
+          {{weatherData.main.humidity}}%
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+         <img src="../assets/wind.png" alt="">
+         <span>wind</span>
+        </div>
+        <div class="info-block-value">
+          {{(weatherData.wind.speed*3.6).toFixed(1)}}Km/h
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet>
+
+</router-outlet>
