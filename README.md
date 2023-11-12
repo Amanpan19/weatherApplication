@@ -1,3 +1,5 @@
+![image](https://github.com/Amanpan19/weatherApplication/assets/120437937/e1097bdf-4769-44b6-98ea-e78c9890b4fc)
+
 # WeatherApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
